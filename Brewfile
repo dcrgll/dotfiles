@@ -1,0 +1,47 @@
+# Taps
+tap 'michel-kraemer/zsh-patina'
+
+# Binaries
+brew 'asdf'
+brew 'cloudflared'
+brew 'commitizen'
+brew 'gh'
+brew 'git'
+brew 'mas'
+brew 'mole'
+brew 'pnpm'
+brew 'ripgrep'
+brew 'starship'
+brew 'wget'
+brew 'zsh-autosuggestions'
+brew 'zsh-history-substring-search'
+brew 'michel-kraemer/zsh-patina/zsh-patina'
+
+# Apps
+cask '1password'
+cask '1password-cli'
+cask 'alcove'
+cask 'chatgpt'
+cask 'claude-code'
+cask 'cleanshot'
+cask 'codex'
+cask 'cursor'
+cask 'font-jetbrains-mono-nerd-font'
+cask 'ghostty'
+cask 'google-chrome'
+cask 'notion-calendar'
+cask 'protonvpn'
+cask 'raycast'
+cask 'rectangle-pro'
+cask 'spotify'
+cask 'supacode'
+cask 'tailscale-app'
+cask 'vlc'
+cask 'whatsapp'
+cask 'zed'
+
+# Mac App Store
+mas 'Amphetamine', id: 937984704
+mas 'Bear', id: 1091189122
+mas 'Klack', id: 6446206067
+mas 'Things 3', id: 904280696
