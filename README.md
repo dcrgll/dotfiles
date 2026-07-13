@@ -20,10 +20,11 @@ brew bundle --file Brewfile
 From this repo, link the config files into `$HOME`:
 
 ```sh
-ln -sf "$PWD/zshrc" "$HOME/.zshrc"
-ln -sf "$PWD/zprofile" "$HOME/.zprofile"
-mkdir -p "$HOME/.zsh" "$HOME/.config" "$HOME/.config/zed"
-ln -sf "$PWD/.zsh/"* "$HOME/.zsh/"
+mkdir -p "$HOME/.zsh" "$HOME/.config/zed"
+ln -sf "$PWD/.zshrc" "$HOME/.zshrc"
+ln -sf "$PWD/.zprofile" "$HOME/.zprofile"
+ln -sf "$PWD/.zsh/aliases.zsh" "$HOME/.zsh/aliases.zsh"
+ln -sf "$PWD/.zsh/functions.zsh" "$HOME/.zsh/functions.zsh"
 ln -sf "$PWD/.config/starship.toml" "$HOME/.config/starship.toml"
 ln -sf "$PWD/.config/zed/settings.json" "$HOME/.config/zed/settings.json"
 ```
