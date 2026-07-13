@@ -1,4 +1,6 @@
-# Login environment (PATH, Homebrew)
+# Login environment (PATH, Homebrew, EDITOR)
+
+export EDITOR='zed'
 
 eval "$(/opt/homebrew/bin/brew shellenv zsh)"
 

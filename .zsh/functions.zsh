@@ -30,3 +30,13 @@ mkdircd() {
 main() {
   git switch main && git pull
 }
+
+# Open existing PR in browser, or start creating one
+pr() {
+  gh pr view --web "${1:-}" 2>/dev/null || gh pr create --web
+}
+
+# Jump to git repo root
+root() {
+  cd "$(git rev-parse --show-toplevel 2>/dev/null)" || return 1
+}
