@@ -7,26 +7,23 @@ Personal macOS dotfiles and app setup.
 - zsh configuration
 - Starship prompt configuration
 - Zed settings
+- `.hushlogin` (suppresses login banner / last-login message)
 - Homebrew `Brewfile`
 
-## Install Homebrew Packages
+## Install
+
+From this repo:
 
 ```sh
-brew bundle --file Brewfile
+./install.sh
 ```
 
-## Symlink Config Files
+This symlinks config files into `$HOME`. Existing files that aren't already symlinks are backed up as `*.bak.<timestamp>` first.
 
-From this repo, link the config files into `$HOME`:
+To also install Homebrew packages from the `Brewfile`:
 
 ```sh
-mkdir -p "$HOME/.zsh" "$HOME/.config/zed"
-ln -sf "$PWD/.zshrc" "$HOME/.zshrc"
-ln -sf "$PWD/.zprofile" "$HOME/.zprofile"
-ln -sf "$PWD/.zsh/aliases.zsh" "$HOME/.zsh/aliases.zsh"
-ln -sf "$PWD/.zsh/functions.zsh" "$HOME/.zsh/functions.zsh"
-ln -sf "$PWD/.config/starship.toml" "$HOME/.config/starship.toml"
-ln -sf "$PWD/.config/zed/settings.json" "$HOME/.config/zed/settings.json"
+./install.sh --brew
 ```
 
 ## asdf
