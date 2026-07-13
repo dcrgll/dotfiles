@@ -49,15 +49,25 @@ link() {
 
 echo "Installing dotfiles from $DOTFILES_DIR"
 
-mkdir -p "$HOME/.zsh/cache" "$HOME/.config/zed"
+mkdir -p "$HOME/.zsh/cache" "$HOME/.config/zed" "$HOME/.config/ghostty"
 
 link "$DOTFILES_DIR/.zshrc" "$HOME/.zshrc"
 link "$DOTFILES_DIR/.zprofile" "$HOME/.zprofile"
 link "$DOTFILES_DIR/.hushlogin" "$HOME/.hushlogin"
+link "$DOTFILES_DIR/.editorconfig" "$HOME/.editorconfig"
 link "$DOTFILES_DIR/.zsh/aliases.zsh" "$HOME/.zsh/aliases.zsh"
 link "$DOTFILES_DIR/.zsh/functions.zsh" "$HOME/.zsh/functions.zsh"
 link "$DOTFILES_DIR/.config/starship.toml" "$HOME/.config/starship.toml"
 link "$DOTFILES_DIR/.config/zed/settings.json" "$HOME/.config/zed/settings.json"
+link "$DOTFILES_DIR/.config/ghostty/config.ghostty" "$HOME/.config/ghostty/config.ghostty"
+
+# App Support config loads after XDG on macOS and would override it
+app_support_ghostty="$HOME/Library/Application Support/com.mitchellh.ghostty/config.ghostty"
+if [[ -e "$app_support_ghostty" && ! -L "$app_support_ghostty" ]]; then
+  backup="${app_support_ghostty}.bak.$(date +%Y%m%d%H%M%S)"
+  echo "Backing up $app_support_ghostty -> $backup"
+  mv "$app_support_ghostty" "$backup"
+fi
 
 if [[ "$WITH_BREW" -eq 1 ]]; then
   if ! command -v brew >/dev/null 2>&1; then

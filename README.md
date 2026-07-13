@@ -7,6 +7,8 @@ Personal macOS dotfiles and app setup.
 - zsh configuration
 - Starship prompt configuration
 - Zed settings
+- Ghostty config
+- `.editorconfig`
 - `.hushlogin` (suppresses login banner / last-login message)
 - Homebrew `Brewfile`
 
