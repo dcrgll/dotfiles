@@ -28,6 +28,6 @@ To also install Homebrew packages from the `Brewfile`:
 ./install.sh --brew
 ```
 
-## asdf
+## mise
 
-asdf Node versions and plugins are managed separately from the `Brewfile`.
+Tool versions are managed with mise (activated in `.zshrc`), separately from the `Brewfile`.
