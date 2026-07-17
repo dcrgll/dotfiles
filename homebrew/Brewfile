@@ -2,12 +2,12 @@
 tap 'michel-kraemer/zsh-patina'
 
 # Binaries
-brew 'asdf'
 brew 'cloudflared'
 brew 'commitizen'
 brew 'gh'
 brew 'git'
 brew 'mas'
+brew 'mise'
 brew 'mole'
 brew 'pnpm'
 brew 'ripgrep'

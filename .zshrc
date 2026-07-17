@@ -27,4 +27,5 @@ fi
 
 # Prompt
 eval "$(starship init zsh)"
+eval "$(mise activate zsh)"
 eval "$(/opt/homebrew/bin/zsh-patina activate)"
