@@ -49,7 +49,7 @@ link() {
 
 echo "Installing dotfiles from $DOTFILES_DIR"
 
-mkdir -p "$HOME/.zsh/cache" "$HOME/.config/zed" "$HOME/.config/ghostty"
+mkdir -p "$HOME/.zsh/cache" "$HOME/.config/zed" "$HOME/.config/ghostty/themes"
 
 link "$DOTFILES_DIR/.zshrc" "$HOME/.zshrc"
 link "$DOTFILES_DIR/.zprofile" "$HOME/.zprofile"
@@ -60,6 +60,8 @@ link "$DOTFILES_DIR/.zsh/functions.zsh" "$HOME/.zsh/functions.zsh"
 link "$DOTFILES_DIR/.config/starship.toml" "$HOME/.config/starship.toml"
 link "$DOTFILES_DIR/.config/zed/settings.json" "$HOME/.config/zed/settings.json"
 link "$DOTFILES_DIR/.config/ghostty/config.ghostty" "$HOME/.config/ghostty/config.ghostty"
+link "$DOTFILES_DIR/.config/ghostty/themes/dark" "$HOME/.config/ghostty/themes/dark"
+link "$DOTFILES_DIR/.config/ghostty/themes/light" "$HOME/.config/ghostty/themes/light"
 
 # App Support config loads after XDG on macOS and would override it
 app_support_ghostty="$HOME/Library/Application Support/com.mitchellh.ghostty/config.ghostty"
