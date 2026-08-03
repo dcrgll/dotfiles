@@ -19,10 +19,16 @@ compinit
 [[ -f $HOME/.zsh/aliases.zsh ]] && source $HOME/.zsh/aliases.zsh
 [[ -f $HOME/.zsh/functions.zsh ]] && source $HOME/.zsh/functions.zsh
 
-# Plugins (Homebrew)
-if [[ -n $HOMEBREW_PREFIX ]]; then
-  source $HOMEBREW_PREFIX/share/zsh-autosuggestions/zsh-autosuggestions.zsh
-  source $HOMEBREW_PREFIX/share/zsh-history-substring-search/zsh-history-substring-search.zsh
+# Plugins (Homebrew) - local sessions only
+if [[ -z "$SSH_CONNECTION" && -n "$HOMEBREW_PREFIX" ]]; then
+  source "$HOMEBREW_PREFIX/share/zsh-autosuggestions/zsh-autosuggestions.zsh"
+  source "$HOMEBREW_PREFIX/share/zsh-history-substring-search/zsh-history-substring-search.zsh"
+fi
+
+# SSH session tweaks
+if [[ -n "$SSH_CONNECTION" ]]; then
+  export ZSH_DISABLE_COMPFIX=true
+  DISABLE_AUTO_UPDATE=true
 fi
 
 # Prompt
